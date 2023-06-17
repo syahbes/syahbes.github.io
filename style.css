@@ -1,0 +1,214 @@
+/* * {
+    border: 1px solid red;
+} */
+:root {
+    --primary-color: #457b9d;
+    --secondary-color: #ebfeff;
+    --black-color: #141414;
+    --white-color: #fff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    background-color: var(--secondary-color);
+}
+
+nav {
+    background-color: var(--secondary-color);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logo {
+    color: var(--primary-color);
+    font-family: 'Moirai One', cursive;
+    font-size: 2rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 10px;
+    list-style: none;
+}
+
+nav a {
+    color: var(--black-color);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+nav a:hover {
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.content-hero {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-color);
+    position: relative;
+    padding: 20px 0;
+    gap: 50px;
+}
+
+.content-hero img {
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+}
+
+.button-stack {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.button-stack button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+    font-size: 0.8rem;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.btn-primary:active {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--black-color);
+}
+
+.btn-secondary:active {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content-about {
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+    gap: 50px;
+}
+
+.about-text {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    /* margin: auto; */
+    padding: 20px;
+}
+
+h2 {
+    margin: 10px 0;
+    font-size: 2rem;
+}
+
+.about-text p {
+    margin: 0;
+}
+
+
+.title {
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.about-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+    /* margin: auto; */
+    overflow: hidden;
+    padding: 20px;
+}
+
+.content-skills {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.skills-stack {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.content-projects {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white-color);
+}
+
+.content-contact-container {
+width: 100%;
+background-color: var(--secondary-color);
+}
+.content-contact {
+    width: fit-content;
+    /* background-color: red; */
+    padding: 0 40px ;
+}
+
+@media screen and (max-width: 800px) {
+    .logo {
+        display: none;
+    }
+
+    .content-hero {
+        flex-direction: column;
+    }
+
+    .about-img {
+        display: none;
+    }
+}
