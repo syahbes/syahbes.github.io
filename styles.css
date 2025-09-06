@@ -42,6 +42,8 @@ body {
 }
 
 .btn {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -50,7 +52,7 @@ body {
   font-weight: 500;
   border-radius: 0.375rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Ensure transition for all properties */
   text-decoration: none;
   border: none;
 }
@@ -62,8 +64,7 @@ body {
 
 .btn-primary:hover {
   background: linear-gradient(to right, #4f46e5, #7c3aed);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5); /* Subtle glow */
 }
 
 .btn-secondary {
@@ -73,8 +74,7 @@ body {
 
 .btn-secondary:hover {
   background: linear-gradient(to right, #2563eb, #0891b2);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); /* Subtle glow */
 }
 
 .btn-outline {
@@ -85,8 +85,8 @@ body {
 
 .btn-outline:hover {
   background: #f9fafb;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border-color: var(--color-highlight); /* Highlight border */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow */
 }
 
 .section-title {
@@ -94,6 +94,11 @@ body {
   align-items: center;
   gap: 1rem;
   margin-bottom: 2rem;
+}
+
+.section-title h2 {
+  font-size: 2.25rem; /* Larger and more prominent */
+  font-weight: 700;
 }
 
 .gradient-line {
@@ -207,6 +212,7 @@ body {
   max-width: 36rem;
   margin-left: auto;
   margin-right: auto;
+  text-wrap: balance;
 }
 
 .social-btns {
@@ -223,6 +229,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   animation: bounce 2s infinite;
+  color: var(--color-text-lighter); /* Added color to scroll indicator */
 }
 
 @keyframes bounce {
@@ -239,10 +246,11 @@ body {
 .about-content {
   display: grid;
   grid-template-columns: 1fr;
+  gap: 3rem; /* Added gap for potential image/text layout */
 }
 
 .about-text {
-  margin-bottom: 3rem;
+  margin-bottom: 3rem; /* Adjusted for potential grid layout */
 }
 
 .about-text p {
@@ -297,8 +305,7 @@ body {
 }
 
 .project-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 .project-gradient {
@@ -368,6 +375,7 @@ body {
   color: var(--color-text-light);
   max-width: 32rem;
   margin: 0 auto 2rem;
+  text-wrap: balance;
 }
 
 .contact-buttons {
@@ -450,8 +458,16 @@ body {
 
 /* Responsive styles */
 @media (min-width: 768px) {
+  .about-content {
+    grid-template-columns: 2fr 1fr; /* Adjust for potential image/text + skills */
+  }
+
+  .about-text {
+    margin-bottom: 0; /* Remove margin if in a grid with other content */
+  }
+
   .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Changed to 2 for better balance on wider screens */
   }
 
   .projects-grid {
@@ -476,4 +492,39 @@ body {
   .section {
     padding: 4rem 0;
   }
+
+  .section-title h2 {
+    font-size: 1.75rem; /* Adjust heading size for mobile */
+  }
+}
+
+
+/* shimmer */
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* Ensure button text stays above shimmer */
+.btn * {
+    position: relative;
+    z-index: 2;
 }
