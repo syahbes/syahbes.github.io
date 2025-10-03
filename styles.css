@@ -285,11 +285,13 @@ body {
   gap: 0.75rem;
   background-color: white;
   padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  border: 1px solid var(--color-border);
+  border-color: #0000EE;
   min-width: 144px;
-  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); */
-  /* font-size: 14px; */
+  border-top: 1px solid;
+  border-right: 1px solid;
+  border-bottom: 2px solid;
+  border-left: 1px solid;
+  border-radius: 8px;
 }
 
 /* Projects Section */
